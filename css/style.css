@@ -1,0 +1,190 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+body {
+    font: 1.5rem "Nunito", sans-serif;
+    background-color: bisque;
+    background-image: radial-gradient(whitesmoke, rgb(10, 56, 10));
+    color: darkolivegreen;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header, footer {
+    position: sticky;
+    background-color: darkolivegreen;
+    color:antiquewhite;
+    text-align: center;
+}
+
+header {
+    top: 0;
+}
+
+nav {
+    background-color:darkseagreen;
+    padding: 0.8rem;
+    border-bottom: 2px solid #000;
+    font-weight: bolder;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+nav a,
+nav a:visited {
+    color: azure;
+}
+
+nav a:hover,
+nav a:focus {
+    color: pink;
+    text-decoration: none;
+}
+
+main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1rem;
+}
+
+footer {
+    bottom: 0;
+}
+
+
+.profile {
+    scroll-margin-top: 8rem;
+    width: min(100%, 350px);
+    background-color:rgb(245, 217, 214);
+    border: 2px solid #000;
+    border-radius: 10px;
+    padding: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile figure {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.profile img {
+    border: 5px double rgb(70, 74, 62);
+    border-radius: 15px;
+}
+.profile figcaption {
+    color:#000;
+    font-size: 1.8rem;
+    font-weight: bolder;
+    margin: 0.5rem;
+    text-align: center;
+}
+
+.profile p {
+    text-align: center;
+}
+
+/* MEDIA QURIES */
+
+/* SMALL */
+
+@media screen and (min-width: 576px) {
+    main {
+        justify-content: center;
+        flex-flow: row wrap;
+        padding: 1rem;
+    }
+    .profile {
+        width: min(100%, 400px)
+    }
+    
+}
+
+/* MEDIUM */
+
+@media screen and (min-width: 768px) {
+    nav {
+        display: none;
+    }
+
+    .profile {
+        width: min(100%, 350px)
+    }
+    .profile figure {
+        flex-direction: column-reverse;
+    }
+    .profile p {
+        margin-top: 1rem;
+    }
+    .profile img {
+        border-radius: 50%;
+    }
+}
+
+/* LARGE */
+@media screen and (min-width: 992px) {
+    .profile {
+        width: min(100%, 400px)
+    }
+    
+}
+
+/* XL */
+
+@media screen and (min-width: 1200px) {
+    .profile {
+        width: min(calc(33% - 1rem), 500px);
+    }
+    main {
+        justify-content: space-evenly;
+    }
+}
+
+/* || MOBILE DEVICE LANSCAPE */
+
+@media screen and (max-height: 425px) and (min-aspect-ratio: 7/4) {
+    h1 {
+        font-size: 1.5rem;
+       }
+    nav {
+        display: none;
+        }
+    main {
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: stretch;
+        margin-top: 0;
+        }
+        .profile {
+            width: min(calc(33% - 0.25rem), 200px);
+            scroll-margin-top: 0rem;
+        }
+        .profile figcaption, 
+        .profile p {
+            font-size: 1rem;
+        }
+        .profile img {
+            border-radius: 50%;
+        }
+    footer {
+        font-size: smaller;
+    }
+}
